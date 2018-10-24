@@ -25,7 +25,7 @@ CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())[
 
 
 # Connect to Database and create database session
-engine = create_engine('sqlite:///gearrental.db?check_same_thread=False')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
